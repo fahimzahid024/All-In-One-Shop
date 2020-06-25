@@ -1,6 +1,3 @@
-@extends('layouts.app')
-
-@section('content')
 {{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -69,7 +66,7 @@
     </div>
 </div> --}}
 
-<div class="wrapper-page">
+{{-- <div class="wrapper-page">
             <div class="panel panel-color panel-primary panel-pages">
                 <div class="panel-heading bg-img"> 
                     <div class="bg-overlay"></div>
@@ -138,5 +135,103 @@
                 </div>                                 
                 
             </div>
+        </div> --}}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from www.urbanui.com/salt/jquery/pages/samples/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Dec 2017 12:33:56 GMT -->
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Salt Admin</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="{{ asset('my_css_file/node_modules/mdi/css/materialdesignicons.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('my_css_file/node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css') }}">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <link rel="stylesheet" href="{{ asset('my_css_file/node_modules/rickshaw/rickshaw.min.css') }}" />
+  <link rel="stylesheet" href="{{ asset('my_css_file/bower_components/chartist/dist/chartist.min.css') }}" />
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="{{ asset('my_css_file/css/style.css') }}">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="{{ asset('my_css_file/images/favicon.html') }}" />
+</head>
+
+<body class="sidebar-dark">
+  <div class="container-scroller" >
+    <div class="container-fluid page-body-wrapper">
+      <div class="row">
+        <div class="content-wrapper full-page-wrapper d-flex align-items-center auth-pages">
+          <div class="card col-lg-4 mx-auto">
+            <div class="card-body px-5 py-5">
+              <h3 class="card-title text-left mb-3">Login</h3>
+              <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
+                @csrf
+                <div class="form-group">
+                  <label> Email *</label>
+                  <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} p_input" name="email" value="{{ old('email') }}" required autofocus>
+
+                  @if ($errors->has('email'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('email') }}</strong>
+                    </span>
+                  @endif
+                </div>
+
+                <div class="form-group">
+                  <label>Password *</label>
+                  <input id="password" type="password"  class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} p_input" name="password" required>
+                  @if ($errors->has('password'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('password') }}</strong>
+                    </span>
+                  @endif
+                </div>
+
+
+
+                <div class="form-group d-flex align-items-center justify-content-between">
+                  <div class="icheck-square">
+                    <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                    <label for="remember">Remember me</label>
+                  </div>
+
+                  <a href="{{ route('password.request') }}" class="forgot-pass">Forgot password</a>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary btn-block enter-btn">Login</button>
+                </div>
+                <small class="text-center d-block">Don't have an Account?<a href="{{ route('register') }}"> Sign Up</a></small>
+              </form>
+            </div>
+          </div>
         </div>
-@endsection
+        <!-- content-wrapper ends -->
+      </div>
+      <!-- row ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="{{ asset('my_css_file/node_modules/jquery/dist/jquery.min.js') }}"></script>
+  <script src="{{ asset('my_css_file/node_modules/popper.js/dist/umd/popper.min.js') }}"></script>
+  <script src="{{ asset('my_css_file/node_modules/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('my_css_file/node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js') }}"></script>
+  <!-- endinject -->
+  <!-- inject:js -->
+  <script src="{{ asset('my_css_file/js/off-canvas.js') }}"></script>
+  <script src="{{ asset('my_css_file/js/hoverable-collapse.js') }}"></script>
+  <script src="{{ asset('my_css_file/js/misc.js') }}"></script>
+  <script src="{{ asset('my_css_file/js/settings.js') }}"></script>
+  <!-- endinject -->
+</body>
+
+
+<!-- Mirrored from www.urbanui.com/salt/jquery/pages/samples/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Dec 2017 12:33:56 GMT -->
+</html>
+
