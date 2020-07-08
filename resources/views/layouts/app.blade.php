@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="{{ asset('my_css_file/node_modules/rickshaw/rickshaw.min.css') }}" />
   <link rel="stylesheet" href="{{ asset('my_css_file/bower_components/chartist/dist/chartist.min.css') }}" />
   <!-- End plugin css for this page -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
   <!-- inject:css -->
   <link rel="stylesheet" href="{{ asset('my_css_file/css/style.css') }}">
   <!-- endinject -->
@@ -136,8 +137,8 @@
 
 
         <nav class="navbar navbar-light col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper">
-        <a class="navbar-brand brand-logo" href="index.html"><img src="images/salt_logo.svg" alt="Logo"></a>
+      <div class="text-center navbar-brand-wrapper" style="background-image: -webkit-linear-gradient(top, #a09f9f 0%, #eae3e6 100%);">
+        <a class="navbar-brand brand-logo" href="index.html" ><img src="{{ URL::to('my_css_file/images/Family_Bazar.png') }}" alt="Logo"></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <button class="navbar-toggler navbar-toggler align-self-center mr-2" type="button" data-toggle="minimize">
@@ -148,7 +149,7 @@
             Dropdown
           </button>
           <div class="dropdown-menu">
-            <div><a href="{{ route('logout') }}"
+            <div><a class="dropdown-item" href="{{ route('logout') }}"
                onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="md md-settings-power"></i> Logout</a>
                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
@@ -252,7 +253,7 @@
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <div class="user-info">
             <div class="profile">
-              <img src="http://via.placeholder.com/47x47" alt="">
+              <img src="{{ URL::to('my_css_file/images/Family_Bazar1.png') }}" alt="">
             </div>
             <div class="details">
               <p class="user-name">Zahidur Rahman</p>
@@ -291,6 +292,30 @@
                 </ul>
               </div>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#authSubmenu" aria-expanded="false" aria-controls="authSubmenu">
+                <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+                <span class="menu-title">Subcategory</span>
+                <i class="mdi mdi-chevron-down menu-arrow"></i>
+              </a>
+              <div class="collapse" id="authSubmenu">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('add.subcategory') }}">
+                      Add Sub Category
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('all.subcategory') }}">
+                      All Sub Category
+                    </a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </li>
+
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#sidebar_layouts" aria-expanded="false" aria-controls="sidebar_layouts">
                 <i class="mdi mdi-format-list-bulleted menu-icon"></i>
@@ -300,81 +325,21 @@
               <div class="collapse" id="sidebar_layouts">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item">
-                    <a class="nav-link" href="">Add Product</a>
+                    <a class="nav-link" href="{{ route('add.product') }}">Add Product</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/layout/sidebar-collapsed.html">All Product</a>
+                    <a class="nav-link" href="{{ route('all.product') }}">All Product</a>
                   </li>
                   
                 </ul>
               </div>
             </li>
-            <!--main pages end-->
-            <!--sample pages start-->
-            <li class="nav-item nav-category">
-              <span class="nav-link">Sample pages</span>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#authSubmenu" aria-expanded="false" aria-controls="authSubmenu">
-                <i class="mdi mdi-lock-outline menu-icon"></i>
-                <span class="menu-title">Authentication</span>
-                <i class="mdi mdi-chevron-down menu-arrow"></i>
-              </a>
-              <div class="collapse" id="authSubmenu">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/samples/login.html">
-                      Login
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/samples/login-2.html">
-                      Login 2
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/samples/register.html">
-                      Register
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/samples/register-2.html">
-                      Register 2
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/samples/lock-screen.html">
-                      Lockscreen
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#errorSubmenu" aria-expanded="false" aria-controls="errorSubmenu">
-                <i class="mdi mdi-alert-circle-outline menu-icon"></i>
-                <span class="menu-title">Error pages</span>
-                <i class="mdi mdi-chevron-down menu-arrow"></i>
-              </a>
-              <div class="collapse" id="errorSubmenu">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/samples/error-404.html">
-                      404
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/samples/error-500.html">
-                      500
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
+            
+            
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#generalSubmenu" aria-expanded="false" aria-controls="generalSubmenu">
                 <i class="mdi mdi-google-pages menu-icon"></i>
-                <span class="menu-title">General Pages</span>
+                <span class="menu-title">Order</span>
                 <i class="mdi mdi-chevron-down menu-arrow"></i>
               </a>
               <div class="collapse" id="generalSubmenu">
@@ -435,7 +400,7 @@
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#ecommerceSubmenu" aria-expanded="false" aria-controls="ecommerceSubmenu">
                 <i class="mdi mdi-cart-outline menu-icon"></i>
-                <span class="menu-title">E-commerce</span>
+                <span class="menu-title">pending</span>
                 <i class="mdi mdi-chevron-down menu-arrow"></i>
               </a>
               <div class="collapse" id="ecommerceSubmenu">
@@ -458,6 +423,7 @@
                 </ul>
               </div>
             </li>
+            {{--
             <!--sample pages end-->
             <!--ui features start-->
             <li class="nav-item nav-category">
@@ -689,7 +655,7 @@
             </li>
             <!--data rep end-->
             <!--forms start-->
-            <li class="nav-item nav-category">
+             <li class="nav-item nav-category">
               <span class="nav-link">Forms</span>
             </li>
             <li class="nav-item">
@@ -820,7 +786,7 @@
                   </li>
                 </ul>
               </div>
-            </li>
+            </li> 
             <!--forms end-->
             <!--Apps start-->
             <li class="nav-item nav-category">
@@ -856,7 +822,7 @@
                 <i class="mdi mdi-file-document-box menu-icon"></i>
                 <span class="menu-title">Documentation</span>
               </a>
-            </li>
+            </li>--}}
           </ul>
         </nav>
          @endguest
@@ -898,8 +864,30 @@
   <script src="{{ asset('my_css_file/js/misc.js') }}"></script>
   <script src="{{ asset('my_css_file/js/settings.js') }}"></script>
   <!-- endinject -->
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+   <script src="{{asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js')}}"></script>
   <!-- Custom js for this page-->
   <script src="{{ asset('my_css_file/js/dashboard_1.js') }}"></script>
+  <script>
+      @if(Session::has('messege'))
+        var type="{{Session::get('alert-type','info')}}"
+        switch(type){
+            case 'info':
+                 toastr.info("{{ Session::get('messege') }}");
+                 break;
+            case 'success':
+                toastr.success("{{ Session::get('messege') }}");
+                break;
+            case 'warning':
+                toastr.warning("{{ Session::get('messege') }}");
+                break;
+            case 'error':
+                toastr.error("{{ Session::get('messege') }}");
+                break;
+        }
+      @endif
+    </script>
   <!-- End custom js for this page-->
 </body>
 </html>

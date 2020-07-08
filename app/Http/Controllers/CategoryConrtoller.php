@@ -39,7 +39,19 @@ class CategoryConrtoller extends Controller
     	
 
     	$insert = DB::table('tbl_category')->insert($data);
-    	return redirect()->back();
+      if ($insert) {
+           $notification=array(
+           'messege'=>'Successfully Category Deleted ',
+           'alert-type'=>'success'
+            );
+          return Redirect()->route('all.category')->with($notification);                      
+       }else{
+        $notification=array(
+           'messege'=>'error ',
+           'alert-type'=>'success'
+            );
+           return Redirect()->back()->with($notification);
+       }
     }
 
     public function all_category()
@@ -52,7 +64,22 @@ class CategoryConrtoller extends Controller
     public function delete_category($category_id)
     {
     	$delete_category = DB::table('tbl_category')->where('category_id',$category_id)->delete();
-    	return redirect()->back();
+        if ($delete_category) 
+        {
+             $notification=array(
+             'messege'=>'Successfully Category Deleted ',
+             'alert-type'=>'success'
+              );
+            return Redirect()->route('all.category')->with($notification);                      
+         }
+         else
+         {
+             $notification=array(
+             'messege'=>'error ',
+             'alert-type'=>'success'
+              );
+             return Redirect()->back()->with($notification);
+         }
     }
 
     public function edit_category($category_id)
@@ -69,20 +96,65 @@ class CategoryConrtoller extends Controller
     	$data['status'] = 1;
     	
     	$update_category = DB::table('tbl_category')->where('category_id',$category_id)->update($data);
-    	return redirect()->route('all.category');
+    	if ($update_category) 
+        {
+             $notification=array(
+             'messege'=>'Successfully Updated Category ',
+             'alert-type'=>'success'
+              );
+            return Redirect()->route('all.category')->with($notification);                      
+         }
+         else
+         {
+             $notification=array(
+             'messege'=>'Please Update Something',
+             'alert-type'=>'success'
+              );
+             return Redirect()->back()->with($notification);
+         }
 
     }
 
     public function unactive_category($category_id)
     {
     	$unactive_category = DB::table('tbl_category')->where('category_id',$category_id)->update(['status'=> 0]);
-    	return redirect()->route('all.category');
+    	if ($unactive_category) 
+        {
+             $notification=array(
+             'messege'=>'Category Unactive Successfully',
+             'alert-type'=>'success'
+              );
+            return Redirect()->route('all.category')->with($notification);                      
+         }
+         else
+         {
+             $notification=array(
+             'messege'=>'Error',
+             'alert-type'=>'success'
+              );
+             return Redirect()->back()->with($notification);
+         }
     }
 
     public function active_category($category_id)
     {
     	$active_category = DB::table('tbl_category')->where('category_id',$category_id)->update(['status'=> 1]);
-    	return redirect()->route('all.category');
+    	if ($active_category) 
+        {
+             $notification=array(
+             'messege'=>'Category Active Successfully',
+             'alert-type'=>'success'
+              );
+            return Redirect()->route('all.category')->with($notification);                      
+         }
+         else
+         {
+             $notification=array(
+             'messege'=>'Error',
+             'alert-type'=>'success'
+              );
+             return Redirect()->back()->with($notification);
+         }
     }
 
     public function view_category($category_id)

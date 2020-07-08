@@ -146,7 +146,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Salt Admin</title>
+  <title>Admin login</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{ asset('my_css_file/node_modules/mdi/css/materialdesignicons.min.css') }}">
   <link rel="stylesheet" href="{{ asset('my_css_file/node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css') }}">
@@ -168,7 +168,7 @@
         <div class="content-wrapper full-page-wrapper d-flex align-items-center auth-pages">
           <div class="card col-lg-4 mx-auto">
             <div class="card-body px-5 py-5">
-              <h3 class="card-title text-left mb-3">Login</h3>
+              <h3 class="card-title text-left mb-3" style="text-align: center;">Family Bazar</h3>
               <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
                 @csrf
                 <div class="form-group">
@@ -203,7 +203,7 @@
                   <a href="{{ route('password.request') }}" class="forgot-pass">Forgot password</a>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary btn-block enter-btn">Login</button>
+                  <button type="submit"  class="btn btn-primary btn-block enter-btn">Login</button>
                 </div>
                 <small class="text-center d-block">Don't have an Account?<a href="{{ route('register') }}"> Sign Up</a></small>
               </form>

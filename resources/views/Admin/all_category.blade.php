@@ -2,10 +2,10 @@
 @section('content')
 <!-- partial -->
 
-          <h1 class="page-title">Data table</h1>
+          <h1 class="page-title">Category Table</h1>
           <div class="card">
             <div class="card-body">
-              <h2 class="card-title">Data table</h2>
+              <h2 class="card-title">Category Table</h2>
               <div class="row">
                 <div class="col-12">
                   <table id="order-listing" class="table table-striped" style="width:100%;">
@@ -31,7 +31,7 @@
 	                          @endif
 	                          <td>
 		                            <a href="{{ URL::to('/edit-category/'.$row -> category_id) }}"><button class="btn btn-outline-info">Edit</button></a>
-		                            <a href="{{ URL::to('/delete-category/'.$row -> category_id) }}"><button class="btn btn-outline-danger">Delete</button></a>
+		                            <a href="{{ URL::to('/delete-category/'.$row -> category_id) }}"><button id="" class="btn btn-outline-danger">Delete</button></a>
 		                            @if($row->status == 1)
 		                              <a href="{{ URL::to('/unactive-category/'.$row -> category_id) }}"><button class="btn btn-outline-primary">Unactive</button></a>
 		                            @else
@@ -50,4 +50,5 @@
             </div>
           </div>
         <!-- content-wrapper ends -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 @endsection

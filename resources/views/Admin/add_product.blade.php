@@ -1,21 +1,39 @@
 @extends('layouts.app')
 @section('content')
 
+<?php
+  $publish_subcategory = DB::table('tbl_subcategory')->get();
+?>
+
 <div class="col-12 col-lg-8 grid-margin" style="">
       <div class="card" style="box-shadow: 0 20px 26px 0">
           <div class="card-body">
               <h2 class="card-title" style="text-align: center; font-size: bold; color: #0c6ed4;">ADD PRODUCT</h2>
-              <form class="forms-sample" method="post" action="{{ URL::to('/save-product') }}" enctype="multipart/form-data">
+              <form class="forms-sample" method="post" action="{{ route('save.product') }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
 
-                {{-- <div class="form-group">
-                		<label for="exampleInputEmail1">Product Category</label>
-                		<select id="example1" name="category_id">
-                			@foreach($published_category as $v_category)
-			              		<option value="{{ $v_category -> category_id }}">{{ $v_category -> category_name }}</option>
-			              	@endforeach
-              	  		</select>
-                </div> --}}
+                
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Product Category</label>
+                    <select id="example1" name="category_id">
+                      @foreach($getData as $row)
+                        <option value="{{ $row -> category_id }}">{{ $row -> category_name }}</option>
+                      @endforeach
+                      </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Sub Category</label>
+                    <select id="example1" name="subcategory_id">
+                      @foreach($publish_subcategory as $v_row)
+                        <option value="{{ $v_row -> subcategory_id }}">{{ $v_row -> subcategory_name }}</option>
+                      @endforeach
+                      </select>
+                </div>
+
+                    
 
                   <div class="form-group">
                       <label for="exampleInputEmail1">Product Name</label>
@@ -54,16 +72,17 @@
 
                   <div class="form-check">
                       <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" type="text" name="publication_status" value="1" required="">
-                        Publication Status
+                        <input type="checkbox" class="form-check-input" type="text" name="product_status" value="1" required="">
+                        Status
                       </label>
                   </div>
                   
                   <div class="form-group row mb-4">
                         <div class="col-sm-8">
-                           <label class="control-label" for="fileInput">Image</label>
+                           <label class="control-label" for="fileInput">Image : </label>
+                           <img id="image" src="#" />
                            <div class="controls">
-                              <input class="input-file uniform_on" name="product_image" id="fileInput" type="file">
+                              <input class="input-file uniform_on" name="product_image" accept="image/*"  required onchange="readURL(this);" type="file">
                           </div>
                     </div>
                   </div>
@@ -72,4 +91,18 @@
           </div>
       </div>
   </div>
+  <script type="text/javascript">
+  function readURL(input) {
+      if (input.files && input.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+              $('#image')
+                  .attr('src', e.target.result)
+                  .width(80)
+                  .height(80);
+          };
+          reader.readAsDataURL(input.files[0]);
+      }
+   }
+</script>
 @endsection
