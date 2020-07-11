@@ -12,8 +12,7 @@
                     <thead>
                       <tr>
                           <th>Id #</th>
-                          <th>Name</th>    
-                          <th>Category</th>    
+                          <th>Name</th>     
                           <th>Price</th>                      
                           <th>Quantity</th> 
                           <th>Image</th>                      
@@ -26,7 +25,7 @@
 	                      <tr>
 	                          <td>{{ $row -> product_id }}</td>
 	                          <td>{{ $row -> product_name }}</td>
-	                          <td>{{ $row -> category_name }}</td>
+	                          
 	                          <td>{{ $row -> product_price }}</td>
 	                          <td>{{ $row -> product_quantity }}</td>
 	                          <td><img src="{{ $row->product_image }}" style="height: 60px; width: 60px;"></td>

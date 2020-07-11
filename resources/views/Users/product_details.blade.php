@@ -39,23 +39,22 @@
 
 </head>
 <body class="cnt-home">
-<!-- ============================================== HEADER ============================================== -->
+
 <header class="header-style-1">
 
-<!-- ============================================== TOP MENU : END ============================================== -->
 <div class="main-header">
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
-			<!-- ============================================================= LOGO ============================================================= -->
+			
 <div class="logo">
 <a href="home.html">
 
 <img src="assets/images/logo.png" alt="">
 
 </a>
-</div><!-- /.logo -->
-<!-- ============================================================= LOGO : END ============================================================= -->				</div><!-- /.logo-holder -->
+</div>
+</div><!-- /.logo-holder -->
 
 <div class="col-xs-12 col-sm-12 col-md-7 top-search-holder">
 	<!-- /.contact-row -->
@@ -69,10 +68,7 @@
     <div class="basket">
 			
 	</div>
-		
-		
-	
-    </div>
+</div>
 </a>
 <ul class="dropdown-menu">
 	<li>
@@ -100,8 +96,7 @@
 		<div class="pull-right">
 			
 				<span class="text">Sub Total :</span><span class='price'>$600.00</span>
-				
-		</div>
+			</div>
 		<div class="clearfix"></div>
 			
 		<a href="checkout.html" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a>	
@@ -111,15 +106,12 @@
 </li>
 </ul><!-- /.dropdown-menu-->
 </div><!-- /.dropdown-cart -->
-
-<!-- ============================================================= SHOPPING CART DROPDOWN : END============================================================= -->				</div><!-- /.top-cart-row -->
+</div><!-- /.top-cart-row -->
 	</div><!-- /.row -->
 
 </div><!-- /.container -->
 
-</div><!-- /.main-header -->
-
-<!-- ============================================== NAVBAR ============================================== -->
+</div>
 <div class="header-nav animate-dropdown">
 <div class="container">
 <div class="yamm navbar navbar-default" role="navigation">
@@ -158,43 +150,23 @@
 			<li>
 				<div class="yamm-content">
 
-</div><!-- /.yamm-content -->					</li>
+     </div><!-- /.yamm-content -->
+</li>
 		</ul>
 	</li>
 	<li class="dropdown hidden-sm">
-		
-		
 	</li>
-
-	
-
-	
-    
-    
-    
-	
 	<li class="dropdown">
 		
 		<ul class="dropdown-menu pages">
 			<li>
 				<div class="yamm-content">
 					<div class="row">
-						
-							
-							
-							
-						
 					</div>
 				</div>
 			</li>
-            
-           
-			
 		</ul>
 	</li>
-     
-			
-	
 </ul><!-- /.navbar-nav -->
 <div class="clearfix"></div>				
 </div><!-- /.nav-outer -->
@@ -205,12 +177,9 @@
 </div><!-- /.navbar-default -->
 </div><!-- /.container-class -->
 
-</div><!-- /.header-nav -->
-<!-- ============================================== NAVBAR : END ============================================== -->
+</div>
 
 </header>
-
-<!-- ============================================== HEADER : END ============================================== -->
 
 <div class="body-content outer-top-xs">
 <div class='container'>
@@ -218,18 +187,13 @@
 <div class='col-md-3 sidebar'>
 <div class="sidebar-module-container">
 <div class="home-banner outer-top-n">
-{{-- <img src="assets/images/banners/LHS-banner.jpg" alt="Image"> --}}
+
 </div>		
-
-
-
-<!-- ============================================== HOT DEALS ============================================== -->
-
-{{-- Hot Deal --}}
 
 <?php 
 $publish_product = DB::table('tbl_product')
                    ->where('product_status',1)
+                   ->limit(2)
                    ->get();
 
 ?>
@@ -242,30 +206,18 @@ $publish_product = DB::table('tbl_product')
         <div class="products">
             <div class="hot-deal-wrapper">
                 <div class="image">
-                    <img src="{{ URL::to($row -> product_image) }}" alt="">
+                    <img  style="height: 200px;" src="{{ URL::to($row -> product_image) }}" alt="">
                 </div>
                 <div class="timing-wrapper">
-                    
-                    
-                    
-
-                    
-
-                    
                 </div>
             </div><!-- /.hot-deal-wrapper -->
 
                 <div class="product-info text-left m-t-20">
                     <h3 class="name"><a href="detail.html">{{ $row-> product_name }}</a></h3>
-                    
-
                     <div class="product-price"> 
                         <span class="price">
-                            {{ $row -> product_price }}
+                            &#2547;  : {{ $row -> product_price }}
                         </span>
-                            
-                                          
-                    
                     </div><!-- /.product-price -->
                     
                 </div><!-- /.product-info -->
@@ -273,13 +225,9 @@ $publish_product = DB::table('tbl_product')
                 <div class="cart clearfix animate-effect">
                     <div class="action">
                         
-                        <div class="add-cart-button btn-group">
-                            <button class="btn btn-primary icon" data-toggle="dropdown" type="button">
-                                <i class="fa fa-shopping-cart"></i>                                                 
-                            </button>
-                            <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
-                                                    
-                        </div>
+                        <div class="col-sm-7">
+						<a href="{{ URL::to('/view-details/'.$row -> product_id) }}" class="btn btn-primary"><i class="fa fa-shopping-cart inner-right-vs"></i> ADD TO CART</a>
+					</div>
                         
                     </div><!-- /.action -->
                 </div><!-- /.cart -->
@@ -307,35 +255,7 @@ foreach ($product_details as $v_row) {
     <div class="detail-block">
 		<div class="row  wow fadeInUp">
         
-{{-- <div class="col-xs-12 col-sm-6 col-md-5 gallery-holder">
-<div class="product-item-holder size-big single-product-gallery small-gallery">
-
-<div id="owl-single-product">
-    <div class="single-product-gallery-item" id="slide1">
-        <a data-lightbox="image-1" data-title="Gallery" href=""><img  src="{{ URL::to('$v_row->product_image') }}" data-echo="assets/images/products/p6.jpg" alt="">
-        </a>
-    </div><!-- /.single-product-gallery-item -->
-
-    
-</div><!-- /.single-product-slider -->
-
-
-<div class="single-product-gallery-thumbs gallery-thumbs">
-
-    <div id="owl-single-product-thumbnails">
-        
-        
-        
-        
-        
-    </div><!-- /#owl-single-product-thumbnails -->
-
-    
-
-</div><!-- /.gallery-thumbs -->
-
-</div><!-- /.single-product-gallery -->
-</div><!-- /.gallery-holder -->      --}}   	
+ 	
 
 
 <div class="col-xs-12 col-sm-6 col-md-5 gallery-holder">
@@ -376,7 +296,11 @@ foreach ($product_details as $v_row) {
 					</div>
 					<div class="col-sm-9">
 						<div class="stock-box">
-							<span class="value">In Stock</span>
+							@if($row->product_quantity > 40)
+								<span class="value">In Stock</span>
+							@else
+								<span class="danger">Not In Stock</span>
+							@endif
 						</div>	
 					</div>
 				</div><!-- /.row -->	
@@ -392,7 +316,7 @@ foreach ($product_details as $v_row) {
 
 					<div class="col-sm-6">
 						<div class="price-box">
-							<span class="price">{{ $v_row -> product_price }}</span>
+							<span class="price">&#2547; : {{ $v_row -> product_price }}</span>
 						</div>
 					</div>
 
@@ -402,30 +326,32 @@ foreach ($product_details as $v_row) {
 
 			<div class="quantity-container info-container">
 				<div class="row">
-					
-					<div class="col-sm-2">
-						<span class="label">Qty :</span>
-					</div>
-					
-					<div class="col-sm-2">
-						<div class="cart-quantity">
-							<div class="quant-input">
-				                <div class="arrows">
-				                  <div class="arrow plus gradient"><span class="ir"><i class="icon fa fa-sort-asc"></i></span></div>
-				                  <div class="arrow minus gradient"><span class="ir"><i class="icon fa fa-sort-desc"></i></span></div>
-				                </div>
-				                <input type="text" value="1">
-			              </div>
-			            </div>
-					</div>
 
-					<div class="col-sm-7">
-						<a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart inner-right-vs"></i> ADD TO CART</a>
-					</div>
+					<form action="{{ url('/add-to-cart') }}" method="post" >
+						{{ csrf_field() }}
+						<div class="col-sm-2">
+							<span class="label">Quantity :</span>
+						</div>
+						
+						<div class="col-sm-2">
+							<div class="cart-quantity">
+								<div class="quant-input">
+					                <div class="arrows">
+					                  <div class="arrow plus gradient"><span class="ir"><i class="icon fa fa-sort-asc"></i></span></div>
+					                  <div class="arrow minus gradient"><span class="ir"><i class="icon fa fa-sort-desc"></i></span></div>
+					                </div>
+					                <input name="qty" type="text" value="1">
+					                <input name="product_id" type="hidden" value="{{ $v_row -> product_id }}">
+				              </div>
+				            </div>
+						</div>
 
+						<button type="submit" class="btn btn-primary"><i class="fa fa-shopping-cart inner-right-vs"></i> ADD TO CART</button>
+
+					</form>
 					
-				</div><!-- /.row -->
-			</div><!-- /.quantity-container -->
+				</div>
+			</div>
 
 			
 

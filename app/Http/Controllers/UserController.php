@@ -30,4 +30,20 @@ class UserController extends Controller
                 ->get();
       return view('Users.product_details')->with('product_details',$product_details);
     }
+
+    public function grocery_product($subcategory_id)
+    {
+      $grocery_product = DB::table('tbl_product')
+                         ->where('subcategory_id',$subcategory_id)
+                         ->get();
+      return view('Users.subcategoryProduct')->with('grocery_product',$grocery_product);
+    }
+
+    public function clothes_product($subcategory_id)
+    {
+      $grocery_product = DB::table('tbl_product')
+                         ->where('subcategory_id',$subcategory_id)
+                         ->get();
+      return view('Users.subcategoryProduct')->with('grocery_product',$grocery_product);
+    }
 }

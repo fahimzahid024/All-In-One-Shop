@@ -2,16 +2,22 @@
 
 
 
+
+
+
+
+/*******************Frontend All Route ********************/
+
+/*******************User Cntroller ************************/
 Route::get('/', 'UserController@index');
-
-
-
-
-
 Route::get('/view-details/{product_id}', 'UserController@view_product');
+Route::get('/grocery-product/{subcategory_id}', 'UserController@grocery_product');
+Route::get('/Clothes-product/{subcategory_id}', 'UserController@clothes_product');
 
 
-
+/*****************Cart Controller*****************/
+Route::post('/add-to-cart', 'CartController@add_to_cart');
+Route::get('/show-cart','CartController@show_cart');
 
 
 

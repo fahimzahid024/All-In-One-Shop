@@ -13,14 +13,7 @@
               <form class="forms-sample" method="post" action="{{ URL::to('/update-product/'.$row -> product_id) }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
 
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Product Category</label>
-                    <select id="example1" name="category_id">
-                      @foreach($getData as $row)
-                        <option value="{{ $row -> category_id }}">{{ $row -> category_name }}</option>
-                      @endforeach
-                      </select>
-                </div>
+                
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Sub Category</label>

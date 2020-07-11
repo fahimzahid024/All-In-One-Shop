@@ -136,8 +136,8 @@ $publish_product = DB::table('tbl_subcategory')
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar navbar-light col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper">
-        <a class="navbar-brand brand-logo" href="index.html"><img src="{{ URL::to('my_css_file/images/salt_logo.svg') }}" alt="Logo"></a>
+      <div  style="background-image: -webkit-linear-gradient(top, #987f89 0%, #d70f64 100%);"  class="text-center navbar-brand-wrapper">
+        <a class="navbar-brand brand-logo" href="{{ URL::to('/') }}" ><img src="{{ URL::to('my_css_file/images/Family_Bazar.png') }}" alt="Logo"></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <button class="navbar-toggler navbar-toggler align-self-center mr-2" type="button" data-toggle="minimize">
@@ -265,7 +265,7 @@ $publish_product = DB::table('tbl_subcategory')
                   @foreach($publish_product as $row)
                   @if($row -> category_name == "Grocery")
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/layout/compact-menu.html">{{ $row -> subcategory_name }}</a>
+                    <a class="nav-link" href="{{ URL::to('/grocery-product/'.$row -> subcategory_id) }}">{{ $row -> subcategory_name }}</a>
                   </li>
                   @endif
                   @endforeach
@@ -285,7 +285,7 @@ $publish_product = DB::table('tbl_subcategory')
                   @foreach($publish_product as $row)
                   @if($row -> category_name == "Clothes")
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/samples/login.html">
+                    <a class="nav-link" href="{{ URL::to('/Clothes-product/'.$row -> subcategory_id) }}">
                       {{ $row -> subcategory_name }}
                     </a>
                   </li>
