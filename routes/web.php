@@ -18,6 +18,7 @@ Route::get('/Clothes-product/{subcategory_id}', 'UserController@clothes_product'
 /*****************Cart Controller*****************/
 Route::post('/add-to-cart', 'CartController@add_to_cart');
 Route::get('/show-cart','CartController@show_cart');
+Route::get('/delete-cart/{rowId}','CartController@delete_form_cart');
 
 
 

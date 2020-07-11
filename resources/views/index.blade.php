@@ -24,7 +24,7 @@ $publish_product = DB::table('tbl_subcategory')
   <link rel="stylesheet" href="{{ asset('my_css_file/node_modules/rickshaw/rickshaw.min.css') }}" />
   <link rel="stylesheet" href="{{ asset('my_css_file/bower_components/chartist/dist/chartist.min.css') }}" />
   <!-- End plugin css for this page -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+  <link href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet') }}"/>
   <!-- inject:css -->
   <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.css') }}">
   <link rel="stylesheet" href="{{ asset('my_css_file/css/style.css') }}">
@@ -743,7 +743,7 @@ cocsmetics --}}
         <footer class="footer">
           <div class="container-fluid clearfix">
             <span class="float-right">
-                <a href="#">Salt Admin</a> &copy; 2017
+                <a href="{{ URL::to('https://www.facebook.com/profile.php?id=100044776141789') }}">zahidur rahman |zahid024|</a> &copy; 2020
             </span>
           </div>
         </footer>
@@ -780,7 +780,7 @@ cocsmetics --}}
   <script src="{{ asset('my_css_file/js/settings.js') }}"></script>
   <!-- endinject -->
 
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+   <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js') }}"></script>
    <script src="{{asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js')}}"></script>
   <!-- Custom js for this page-->
   <script src="{{ asset('my_css_file/js/dashboard_1.js') }}"></script>

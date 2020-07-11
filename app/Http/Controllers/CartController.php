@@ -29,7 +29,8 @@ class CartController extends Controller
 			$data['price']=$product_info->product_price;
 			$image = $data['options']['image']=$product_info->product_image;
 			Cart::add($data);
-			return Redirect::to('/show-cart');		}
+			return Redirect::to('/show-cart');
+		}
 		else if($qty < 5)
 		{
 			echo "Sorry No more the  5 product order at a time";
@@ -44,6 +45,29 @@ class CartController extends Controller
     public function show_cart()
     {
     	return view('Users.shipping_cart');
+    }
+
+    public function delete_form_cart($rowId)
+    {
+    	$delete_category = Cart::remove($rowId);
+
+    	if ($delete_category) 
+        {
+             $notification=array(
+             'messege'=>'Successfully Category Deleted ',
+             'alert-type'=>'success'
+              );
+            return Redirect::to('/show-cart')->with($notification);                      
+         }
+         else
+         {
+             $notification=array(
+             'messege'=>'error ',
+             'alert-type'=>'success'
+              );
+             return Redirect()->back()->with($notification);
+         }
+          
     }
 
 }

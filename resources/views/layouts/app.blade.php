@@ -138,7 +138,7 @@
 
         <nav class="navbar navbar-light col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper" style="background-image: -webkit-linear-gradient(top, #a09f9f 0%, #eae3e6 100%);">
-        <a class="navbar-brand brand-logo" href="index.html" ><img src="{{ URL::to('my_css_file/images/Family_Bazar.png') }}" alt="Logo"></a>
+        <a class="navbar-brand brand-logo" href="{{ url('/') }}" ><img src="{{ URL::to('my_css_file/images/Family_Bazar.png') }}" alt="Logo"></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <button class="navbar-toggler navbar-toggler align-self-center mr-2" type="button" data-toggle="minimize">
@@ -836,7 +836,7 @@
         <footer class="footer">
           <div class="container-fluid clearfix">
             <span class="float-right">
-                <a href="">zahidur rahman |zahid024|</a> &copy; 2020
+                <a href="{{ URL::to('https://www.facebook.com/profile.php?id=100044776141789') }}">zahidur rahman |zahid024|</a> &copy; 2020
             </span>
           </div>
         </footer>

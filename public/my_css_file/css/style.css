@@ -13207,7 +13207,8 @@ a.text-dark:focus, a.text-dark:hover {
     .sidebar-dark .sidebar .nav .nav-item .nav-link i {
       color: #ffffff; }
     .sidebar-dark .sidebar .nav .nav-item.active > .nav-link {
-      background: #0d0d0d; }
+      /*background: #0d0d0d;*/
+      background: #d70f64; }
       .sidebar-dark .sidebar .nav .nav-item.active > .nav-link .menu-title,
       .sidebar-dark .sidebar .nav .nav-item.active > .nav-link i {
         color: #ffffff; }

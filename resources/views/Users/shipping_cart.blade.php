@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/css/rateit.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-select.min.css') }}">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
 
 
 
@@ -80,7 +81,7 @@
 							<tbody>
 								@foreach($content as $row)
 									<tr style="height: 80px;">
-										<td class="romove-item"><a href="#" title="cancel" classfg="icon"><i class="fa fa-trash-o"></i></a></td>
+										<td class="romove-item"><a href="{{ url('/delete-cart/'.$row->rowId) }}" title="cancel" classfg="icon"><i class="fa fa-trash-o"></i></a></td>
 										<td class="cart-image">
 											<a class="entry-thumbnail" href="detail.html">
 											    <img src="{{ URL::to($row -> options -> image) }}" alt="">
@@ -127,7 +128,7 @@
 				<tr>
 					<td>
 						<div class="cart-checkout-btn pull-right">
-							<button type="submit" class="btn btn-primary checkout-btn">Order Confirm</button>
+							<button type="submit" class="btn btn-primary checkout-btn">Order</button>
 							
 						</div>
 					</td>
@@ -232,8 +233,27 @@
 	<script src="{{ asset('assets/js/wow.min.js') }}"></script>
 	<script src="{{ asset('assets/js/scripts.js') }}"></script>
 	
-
-	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+   <script src="{{asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js')}}"></script>
+	<script>
+      @if(Session::has('messege'))
+        var type="{{Session::get('alert-type','info')}}"
+        switch(type){
+            case 'info':
+                 toastr.info("{{ Session::get('messege') }}");
+                 break;
+            case 'success':
+                toastr.success("{{ Session::get('messege') }}");
+                break;
+            case 'warning':
+                toastr.warning("{{ Session::get('messege') }}");
+                break;
+            case 'error':
+                toastr.error("{{ Session::get('messege') }}");
+                break;
+        }
+      @endif
+    </script>
 
 </body>
 </html>
