@@ -163,81 +163,16 @@ $publish_product = DB::table('tbl_subcategory')
         </form>
         <ul class="navbar-nav ml-lg-auto">
           <li class="nav-item dropdown">
-            <a class="nav-link count-indicator" id="notificationDropdown" href="#" data-toggle="dropdown">
-              <i class="mdi mdi-bell-outline"></i>
-              <span class="count bg-warning">7</span>
+            
+            <a class="nav-link count-indicator" href="{{ url('/show-cart') }}" >
+              <div class="col-sm-6 col-md-4 col-lg-3" style="color: white;"><i  style="color: white;" class="fa fa-shopping-cart"></i>Cart</div>
             </a>
-            <div class="dropdown-menu navbar-dropdown notification-drop-down" aria-labelledby="notificationDropdown">
-              <a class="dropdown-item" href="#">
-                <i class="fa fa-birthday-cake text-success fa-fw"></i>
-                <span class="notification-text">Today is John's birthday</span>
-              </a>
-              <a class="dropdown-item" href="#">
-                <i class="fa fa-phone text-danger fa-fw"></i>
-                <span class="notification-text">Call John Doe</span>
-              </a>
-              <a class="dropdown-item" href="#">
-                <i class="fa fa-handshake-o text-primary fa-fw"></i>
-                <span class="notification-text">Meeting Alisa</span>
-              </a>
-              <a class="dropdown-item" href="#">
-                <i class="fa fa-exclamation-triangle text-danger fa-fw"></i>
-                <span class="notification-text">Server space almost full</span>
-              </a>
-              <a class="dropdown-item" href="#">
-                <i class="fa fa-bell text-warning fa-fw"></i>
-                <span class="notification-text">Payment Due</span>
-              </a>
-            </div>
+            
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link count-indicator" id="MailDropdown" href="#" data-toggle="dropdown">
-              <i class="mdi mdi-message-outline"></i>
-              <span class="count bg-danger">4</span>
+              <div style="color:white;" class="col-sm-6 col-md-4 col-lg-3"><i style="color:white;" class="fa fa-sign-in"></i> login</div>
             </a>
-            <div class="dropdown-menu navbar-dropdown mail-notification" aria-labelledby="MailDropdown">
-              <a class="dropdown-item" href="#">
-                <div class="sender-img">
-                  <img src="http://via.placeholder.com/47x47" alt="">
-                  <span class="badge badge-success">&nbsp;</span>
-                </div>
-                <div class="sender">
-                  <p class="Sende-name">John Doe</p>
-                  <p class="Sender-message">Hey, We have a meeting planned at the end of the day.</p>
-                </div>
-              </a>
-              <a class="dropdown-item" href="#">
-                <div class="sender-img">
-                  <img src="http://via.placeholder.com/47x47" alt="">
-                  <span class="badge badge-success">&nbsp;</span>
-                </div>
-                <div class="sender">
-                  <p class="Sende-name">Leanne Jones</p>
-                  <p class="Sender-message">Can we schedule a call this afternoon?</p>
-                </div>
-              </a>
-              <a class="dropdown-item" href="#">
-                <div class="sender-img">
-                  <img src="http://via.placeholder.com/47x47" alt="">
-                  <span class="badge badge-primary">&nbsp;</span>
-                </div>
-                <div class="sender">
-                  <p class="Sende-name">Stella</p>
-                  <p class="Sender-message">Great presentation the other day. Keep up the good work!</p>
-                </div>
-              </a>
-              <a class="dropdown-item" href="#">
-                <div class="sender-img">
-                  <img src="http://via.placeholder.com/47x47" alt="">
-                  <span class="badge badge-warning">&nbsp;</span>
-                </div>
-                <div class="sender">
-                  <p class="Sende-name">James Brown</p>
-                  <p class="Sender-message">Need the updates of the project at the end of the week.</p>
-                </div>
-              </a>
-              <a href="#" class="dropdown-item view-all">View all</a>
-            </div>
           </li>
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">

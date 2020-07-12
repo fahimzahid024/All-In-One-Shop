@@ -42,152 +42,73 @@
 		<!-- ============================================== HEADER ============================================== -->
 <header class="header-style-1">
 
-	<!-- ============================================== TOP MENU ============================================== -->
-<div class="top-bar animate-dropdown">
-	<div class="container">
-		<div class="header-top-inner">
-			
 
-			<div class="cnt-block">
-				
-			</div><!-- /.cnt-cart -->
-			<div class="clearfix"></div>
-		</div><!-- /.header-top-inner -->
-	</div><!-- /.container -->
-</div><!-- /.header-top -->
-
-<div class="main-header">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
-					
-				<div class="logo">
-					
-				</div><!-- /.logo -->
-			</div><!-- /.logo-holder -->
-
-		<div class="col-xs-12 col-sm-12 col-md-7 top-search-holder">
-					
-
-        </div><!-- /.top-search-holder -->
-
-		<div class="col-xs-12 col-sm-12 col-md-2 animate-dropdown top-cart-row">
-			<div class="dropdown dropdown-cart">
-				
-				<ul class="dropdown-menu">
-					<li>
-					</li>
-				</ul><!-- /.dropdown-menu-->
-			</div>
-		</div><!-- /.top-cart-row -->
-		</div><!-- /.row -->
-
-		</div><!-- /.container -->
-
-	</div><!-- /.main-header -->
-
-	<!-- ============================================== NAVBAR ============================================== -->
 <div class="header-nav animate-dropdown">
-    <div class="container">
-        <div class="yamm navbar navbar-default" role="navigation">
-            <div class="nav-bg-class">
-                <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
-	<div class="nav-outer">
-		<ul class="nav navbar-nav">
-			<li class="active dropdown yamm-fw">
-				<a href="home.html" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Home</a>
-				
-			</li>
-			<li class="dropdown yamm mega-menu">
-				
-                <ul class="dropdown-menu container">
-					<li>
-               						<div class="yamm-content ">
-            <div class="row">
-                
-                   <div class="col-xs-12 col-sm-6 col-md-2 col-menu">
-                        
-                        
-                    </div><!-- /.col -->
-
-                    <div class="col-xs-12 col-sm-6 col-md-2 col-menu">
-                        
-            </div><!-- /.col -->
-
-                    
-
-                    <div class="col-xs-12 col-sm-6 col-md-2 col-menu">
-                        
-                    </div><!-- /.col -->
-
-                    
-       <div class="col-xs-12 col-sm-6 col-md-4 col-menu banner-image">
-        <img class="img-responsive" src="assets/images/banners/top-menu-banner.jpg" alt="">
-                              
-                            
-      
+<div class="container">
+<div class="yamm navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <button data-target="#mc-horizontal-menu-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="nav-bg-class">
+        <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
+<div class="nav-outer">
+<ul class="nav navbar-nav">
+	<li class="active dropdown yamm-fw">
+		<a href="{{URL::to('/')}}" >Home</a>
+		
+	</li>
+	<li class="dropdown yamm mega-menu">
+		
+        <ul class="dropdown-menu container">
+			<li>
+<div class="yamm-content ">
    
-       
- 
-</div><!-- /.yamm-content -->					
-</div>
 </div>
 
 </li>
-				</ul>
-				
-			</li>
+		</ul>
+		
+	</li>
 
-			<li class="dropdown mega-menu">
-				
-            <ul class="dropdown-menu container">
-					<li>
-						<div class="yamm-content">
-           <div class="row">
-           <div class="col-xs-12 col-sm-12 col-md-2 col-menu">
-                
-            </div><!-- /.col -->
+	<li class="dropdown mega-menu">
+		
+        <ul class="dropdown-menu container">
+			<li>
+				<div class="yamm-content">
 
-            <div class="col-xs-12 col-sm-12 col-md-2 col-menu">
-                
-            </div><!-- /.col -->
-
-            <div class="col-xs-12 col-sm-12 col-md-2 col-menu">
-                
-            </div><!-- /.col -->
-            <div class="col-xs-12 col-sm-12 col-md-2 col-menu">
-                
-            </div>
-            
-             <div class="col-xs-12 col-sm-12 col-md-4 col-menu custom-banner">
-             <a href="#"><img alt="" src="assets/images/banners/banner-side.png"></a>
-             </div>
-    </div><!-- /.row -->
-</div><!-- /.yamm-content -->					</li>
-				</ul>
+     </div><!-- /.yamm-content -->
+</li>
+		</ul>
+	</li>
+	<li class="dropdown hidden-sm">
+	</li>
+	<li class="dropdown">
+		
+		<ul class="dropdown-menu pages">
+			<li>
+				<div class="yamm-content">
+					<div class="row">
+					</div>
+				</div>
 			</li>
-			
-                   
-					
-				</ul>
-			</li>
-             <li class="dropdown  navbar-right special-menu">
-				
-			</li>
-					
-			
-		</ul><!-- /.navbar-nav -->
-		<div class="clearfix"></div>				
-	</div><!-- /.nav-outer -->
+		</ul>
+	</li>
+</ul><!-- /.navbar-nav -->
+<div class="clearfix"></div>				
+</div><!-- /.nav-outer -->
 </div><!-- /.navbar-collapse -->
 
 
-            </div><!-- /.nav-bg-class -->
-        </div><!-- /.navbar-default -->
-    </div><!-- /.container-class -->
+    </div><!-- /.nav-bg-class -->
+</div><!-- /.navbar-default -->
+</div><!-- /.container-class -->
 
-</div><!-- /.header-nav -->
-<!-- ============================================== NAVBAR : END ============================================== -->
+</div>
 
 </header>
 
